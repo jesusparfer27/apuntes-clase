@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:Impact;
+}
+
+/* Estilos generales para los elementos section */
+section{
+    height:50vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+/* Estilos que se aplican al segundo section */
+section:nth-child(2){
+    justify-content: space-evenly;
+}
+
+/* Estilos de los bloques (cuadrados) */
+.cuadro{
+    border:1px solid black;
+    background-color:black;
+    width:248px;
+    height:248px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+/* Estilos para el primer elemento bloque con clase cuadro */
+section:nth-child(1) .cuadro{
+    width:298px;
+    height:298px;
+}
+p{
+    text-align:center;
+    color:white;
+    mix-blend-mode:difference;
+    font-size:2em;
+}
+/* Se le asigna la clase .control a los elementos .cuadros y los input para juntarlos y darle estilos en un mismo espacio*/
+.control{
+    width:250px;
+}
+input{
+    display:block;
+    width:100%;
+    margin-top:10px;
+    
+}
+

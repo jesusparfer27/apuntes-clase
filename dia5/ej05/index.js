@@ -1,0 +1,1 @@
+// ej05: Deconstrucción de Datos del Clima: Crea una función que tome un objeto de datos de clima, deconstruya sus propiedades para obtener temperatura y humedad, y devuelva un array con estos dos valores.
