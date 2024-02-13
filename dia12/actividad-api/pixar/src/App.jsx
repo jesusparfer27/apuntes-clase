@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Column from './components/column/Column'
 // import Footer from './components/Footer'    
-import './App.css'
 import Hero from './components/hero/Hero'
 import Header from './components/header/Header'
+import './newApp.css'
+import './components/column/Column.css'
+
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -12,6 +14,7 @@ function App() {
     <>
     <Header />
     <Hero />
+    <Column />
     </>
   )
 }
