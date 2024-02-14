@@ -2,8 +2,8 @@ import { pixar } from '../../deb/deb'
 
 const { column } = pixar;
 
-const Column = () => {
-    const { divUno, divDos, divTres } = column
+const Column = (props) => {
+    const { title, divDos, divTres } = column
     return (
         <>
             <div className="div-column">
