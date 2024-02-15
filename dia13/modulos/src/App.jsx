@@ -1,31 +1,37 @@
 import { useState } from 'react'
-import MenuResponsive from './components/menuresponsive/MenuResponsive'
-import './css/App.css'
-import Tabs from './components/menuresponsive/tabs/Tabs'
-import Accordion from './components/menuresponsive/accordion/Accordion'
-import LightBox from './components/menuresponsive/lightbox/LightBox'
-import Slider from './components/sliders/Slider'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Menu from './components/Menu'
+import Tabs from './components/Tabs/Tabs'
+import Accordion from './components/Accordion/Accordion'
+import LightBox from './components/Lightbox/LightBox'
+import Slider from './components/Slider/Slider'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const items = [ id: 1, titulo: "Pregunta 1", contenido: ""
-    
+  const slider = ["image1.jpg","image2.jpg","image3.jpg"]
+
+
+  const items = [
+    {
+      id: 1, titulo: "Pregunta 1", contenido: "Contenido pregunta 1"
+    }, {
+      id: 2, titulo: "Pregunta 2", contenido: "Contenido pregunta 2"
+    }, {
+      id: 3, titulo: "Pregunta 3", contenido: "Contenido pregunta 3"
+    }
   ]
 
   return (
     <>
-    <MenuResponsive />
-    <br />
-    <Tabs/>
-    <br />
-    <Accordion items={items}/>
-    <br />
-    <LightBox />
-    <br />
-    <Slider />
-    {/* 
-    */}
+      <Menu />
+      {/* Tabuladores, Accordeon, lightBox, Slider */}
+      <Tabs />
+      <Accordion items = {items} />
+      <LightBox/>
+      <Slider items = {slider}/>
     </>
   )
 }

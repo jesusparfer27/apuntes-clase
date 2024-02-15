@@ -1,0 +1,21 @@
+.Columns {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 150px;
+    margin-bottom: 150px
+
+}
+
+.Columns-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Columns-image {
+    width: 350px;
+}
+
+.Columns-text{
+    margin-top: 30px;
+}

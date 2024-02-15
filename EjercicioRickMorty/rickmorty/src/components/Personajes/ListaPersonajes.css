@@ -1,0 +1,49 @@
+.DisplayPersonajes{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: auto;
+    gap: 30px;
+    color:white
+
+}
+
+.PanelControl{
+    display: flex;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    color:white;
+}
+
+.PanelControl-tit{
+    font-family: "RM";
+    flex-grow: 1;
+    text-align: center;
+}
+
+.PanelControl-filtros{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.PanelControl-pages{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+}
+
+.btnA{
+    border: 1px solid yellow;
+    color: yellow;
+}
