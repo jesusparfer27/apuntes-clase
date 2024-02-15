@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="counter">
+        <button class="button-counter">
+            Boton
+        </button>
+    </div>
+    <script>
+
+  let count = 0
+
+  const setCount = () => {
+
+    console.log("count es:", count ++)
+    if (count.length > 0) {
+    count ++
+    }
+    
+}
+
+
+  const boton = document.querySelector('.button-counter');
+
+console.log(boton);  
+  boton.addEventListener('click', setCount);
+
+
+    </script>
+</body>
+</html>

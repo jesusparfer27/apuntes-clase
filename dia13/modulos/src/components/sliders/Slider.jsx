@@ -2,6 +2,9 @@ import { useState } from 'react'
 
 const Slider = ({item}) => {
 
+    // currentSlide es la variable
+    // setCurrentSlide la funcion que actualiza la variable
+    // useState la funcion inicial que le da el valor a la variable
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const handleNextSlide = () => {

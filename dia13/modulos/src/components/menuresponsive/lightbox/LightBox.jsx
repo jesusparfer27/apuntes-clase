@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 const LightBox = () => {
-    const lightBox = () => {
         // Primer atributo Variable
         //  segundo atributo que actualiza la Variable
         // tercer valor es el Valor inicial de la variable
@@ -23,6 +22,7 @@ const LightBox = () => {
                 </div>}
         </section>
     )
+
 }
 
 export default LightBox
