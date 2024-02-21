@@ -1,9 +1,11 @@
 // const Express
 import express from "express";
 
-// const POORT= 3000
+// const PORT= 3000
 import {PORT} from './config.js'
 import {timeLog} from './middlewares/logger.js'
+
+import * as xmlbuilder from xmlbuilder
 
 
 /**
@@ -35,4 +37,35 @@ app.get("/resp-json", (req, res) => {
     res.send(jsonData)
 })
 
-app.listen
+app.get("/resp-xml", (req, res) => {
+
+    const xml = xmlbuilder.create('data')
+    .ele('id', data.id)
+    .up()
+    .ele('name', data.name)
+    .up()
+    .ele('email', datos.email)
+    .end();
+
+    res.header('Content-type', 'application/xml');
+    res.send(xml)
+})
+
+app.get("/usuarios/:idusuario/:nombre", (req, res) => {
+
+    console.log(req);
+    //  recibimos parametros
+    const idUsuario=req.params.idusuario;
+    const nombre=req.params.nombre;
+
+    constjsonData = JSON.stringify(datos);
+    res.setHeader("Content-Type", "application/json");
+    res.send(jsonData);
+})
+
+app.get("/usuarios", (req, res) => {
+    const jsonData = JSON.stringify(datos);
+    res.setHeader("Content.Type", "application/json");
+    res.send(jsonData);
+})
+

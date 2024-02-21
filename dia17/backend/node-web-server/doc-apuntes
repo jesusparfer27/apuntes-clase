@@ -1,0 +1,31 @@
+Instalar express: npm i nodemon -D
+
+Para ejecutarlo: npm run start.+
+
+/*
+
+
+
+*/
+
+/*
+
+GET: para c¡tener informacion.
+
+PUT: Modificar los elementos
+
+*/
+
+/*
+
+resolve: si no hay errores los resuelve
+
+reject: rechaza si hay algun error
+
+*/
+
+/*
+
+
+
+*/

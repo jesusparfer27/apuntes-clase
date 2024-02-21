@@ -1,6 +1,19 @@
 const http = require("http");
 const cowsay = require("cowsay")
 
+
+/**
+ *  URL de Node
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
 const server = http.createServer( (req, res) => {
     res.statusCode=200;
     res.setHeader("Content-Type", "text/html");
@@ -21,7 +34,6 @@ if(req.url == "/"){
 
 if(!isRoute){
     
-  
     res.write("<head><tittle>No encontrada</tittle></head>")
     res.write("<body><h1>eRROR 404 NOT FOUND</h1></body>")
     
