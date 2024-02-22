@@ -26,6 +26,8 @@ reject: rechaza si hay algun error
 
 /*
 
-
+find devuelve el primer elemento que lo cumpla
 
 */
+
+Set es un objeto que colecciona valores
