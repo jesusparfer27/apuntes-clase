@@ -63,6 +63,10 @@ app.get("/ejemplo/c", (req, res, next) => {
     res.send("Llegaste a la segunda función (C)")
 })
 
+app.get("/authors", (req, res) => {
+    
+})
+
 app.listen(8080, () => {
     console.log("Servidor running")
 })
