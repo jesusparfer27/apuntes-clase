@@ -31,3 +31,23 @@ find devuelve el primer elemento que lo cumpla
 */
 
 Set es un objeto que colecciona valores
+
+*/
+
+*/
+
+const [pokedex, setPokedex] useState([])
+
+const: constante que fija una variable durante doto el scrypt. 
+pokedex: la variable que en este caso fija la constante.
+setPokedex: la funcion que actualiza el valor de la variable.
+useState: el hook.
+([]): el array del hook muestra el valor inicial de la variable
+
+*/
+
+*/
+
+
+
+/*
