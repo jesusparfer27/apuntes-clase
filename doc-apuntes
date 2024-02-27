@@ -48,6 +48,10 @@ useState: el hook.
 
 */
 
+const [variable, setVariable] = useState()
 
+variable = es la constante con el valor inicial.
+setVariable = es la funcion que se encarga de actualizar el valor inicial de la variable
+useState() = es el hook que da un valor predeterminado a la variable
 
 /*

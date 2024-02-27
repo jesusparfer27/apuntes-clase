@@ -1,5 +1,11 @@
 import './App.css'
 import { Routes, Route, Outlet, Link} from "react-router-dom"
+import {Notfound} from './components/NotFound'
+import Navigation from './components/Navigation'
+import Home from './components/Home'
+import BookList from './components/BookList'
+import ListAuthors from './components/ListAuthors'
+import BookAdd from './components/BookAdd'
 
 function App() {
 
@@ -12,46 +18,36 @@ function App() {
         <Route path="/lista" element={<ListaDeLibros />}> </Route>
         <Route path="/Contacto" element={<Contacto />}>
           
+        <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
   )
 }
 
-function Layout(){
+function Layout (){
   return (
-    <>
-    <h1>Soy Header</h1>
-    <nav>
-     <ul>
-      <li>
-        <Link to="/">Bienvenida</Link>
-      </li>
-      <li>
-        <Link to="/lista">Lista de libros</Link>
-      </li>
-      <li>
-        <Link to="/Contacto">Contacto</Link>
-      </li>
-     </ul>
-    </nav>
-    <h1>Layout</h1>
-    {/* El  <Outlet> va a renderizar el Child que le mandes*/}
-    <Outlet />
+<>
+<Navigation />
+{/* El  <Outlet> va a renderizar el Child que le mandes*/}
+<div className='content'>
+<Outlet />
+</div>
+<footer>Soy footer</footer>
+</>
 
-    <footer>Soy footer</footer>
-    </>
-  )
-}
+)}
 
 function Contacto() {
 
 }
 
-function Home() {
+function Agregar() {
   return (
-    <h1>Nuestra libreria HOME</h1>
+
   )
 }
+
+
 
 export default App
