@@ -9,9 +9,9 @@ const app = express();
 console.clear()
 
 // Uso de MiddleWares
-// app.use(cors())
-// app.use (express.json()); // procesa el json para leer con body
-// app.use(setHeaders)
+ app.use(cors()) //cross origin resoursce sharing
+ app.use (express.json()); // procesa el json para leer con body
+ app.use(setHeaders) 
 app.use(logger)
 
 //  Rutas

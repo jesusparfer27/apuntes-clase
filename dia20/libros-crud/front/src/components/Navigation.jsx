@@ -13,7 +13,13 @@ function Navigation() {
                         <Link to="/lista">Lista de libros</Link>
                     </li>
                     <li>
-                        <Link to="/Contacto">Contacto</Link>
+                        <Link to="/Contacto">Agregar</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Autores</Link>
+                    </li>
+                    <li>
+                        <Link to="/">No existo</Link>
                     </li>
                 </ul>
             </nav>

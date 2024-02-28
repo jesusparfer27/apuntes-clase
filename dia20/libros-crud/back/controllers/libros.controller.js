@@ -17,18 +17,38 @@ export const getAllLibros = (req, res) => {
 }
 
 export const createLibro = (req, res) => {
+
+    const {titulo, autor, categoria} = req.body;
+    const newId = Math.random();
+
+    listaLibros.push()
+
     responseAPI.data="",
-    responseAPI.msg="Obtener libros";
+    responseAPI.msg="Crear nuevo libro";
     responseAPI.status="ok"
     res.status(200).send(responseAPI)
 }
 
 export const deleteLibro = (req, res) => {
-responseAPI.data="",
-responseAPI.msg="Obtener libros";
-responseAPI.status="ok"
+
+    // 1. recibir datos del Body (json)
+    console.clear():
+
+    // obtener el ID de la URL (no del body) ej: http://dominio.com/endpoint/:id
+    const idLibro = req.params.id;
+
+    // 2. obtener de la lista de libros, el indice del libro a eliminar (id)
+    const index = listaLibros.findIndex(libro => libro.id == idLibro);
+
+if(index !== -1) {
+    // 3. Eliminar el item del array
+    // eliminar un item, desde el indice seleccionado
+responseAPI.data=listaLibros[index];
+listaÑibros.splice(index, 1);
+
+responseAPI.msg="Libro Eliminado";
 res.status(200).send(responseAPI)
-}
+} else 
 
 export const getLibroById = (req, res) => {
 responseAPI.data="",

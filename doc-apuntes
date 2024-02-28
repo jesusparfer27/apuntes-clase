@@ -55,3 +55,11 @@ setVariable = es la funcion que se encarga de actualizar el valor inicial de la 
 useState() = es el hook que da un valor predeterminado a la variable
 
 /*
+
+*/
+
+hace de administrador de todas nuestras secciones, paginas, componentes. 
+
+/*
+
+plantilla es toda nuestra app 

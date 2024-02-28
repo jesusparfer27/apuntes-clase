@@ -13,9 +13,9 @@ const responseAPI = {
 router.get ( "/libros", getAllLibros)
 
 //  CRUD: Create Read Update Delete
-router.post("/libros", createLibro);
-router.delete("/libros", deleteLibro);
-router.get("/libros/:id", getLibroById);
-router.put("/libros/:id", updateLibro);
+router.post("/libros", createLibro); //create
+router.delete("/libros", deleteLibro); // delete
+router.get("/libros/:id", getLibroById); // 
+router.put("/libros/:id", updateLibro); //update
 
 export default router;

@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}></Route>
 
-        <Route index element={<Home />}> </Route>
+        <Route index element={<Home />} />
         <Route path="/lista" element={<ListaDeLibros />}> </Route>
         <Route path="/Contacto" element={<Contacto />}>
           
@@ -25,6 +25,7 @@ function App() {
   )
 }
 
+// plantilla es toda nuestra app
 function Layout (){
   return (
 <>
