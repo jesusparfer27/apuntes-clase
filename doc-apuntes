@@ -63,3 +63,11 @@ hace de administrador de todas nuestras secciones, paginas, componentes.
 /*
 
 plantilla es toda nuestra app 
+
+*/
+
+express es un servidor web, se utiliza mucho para crear APIS
+
+*/
+
+findIndex devuelve -1 cuando no encuentra un elemento 
