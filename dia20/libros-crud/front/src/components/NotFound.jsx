@@ -1,7 +1,9 @@
 function NotFound() {
-    return (
-      <h1>Nuestra libreria HOME</h1>
-    )
-  }
+    return (<>
+      <h1>
+        NOT FOUND
+      </h1>
+    </>)
+}
 
-  export default NotFound
+export default NotFound

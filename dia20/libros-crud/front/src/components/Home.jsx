@@ -1,7 +1,11 @@
+
+
 function Home() {
-    return (
-      <h1>Nuestra libreria HOME</h1>
-    )
+    return (<>
+      <h1>
+        Home de nuestra librería
+      </h1>
+    </>)
   }
 
-  export default Home
+  export default Home;

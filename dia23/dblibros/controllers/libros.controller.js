@@ -8,14 +8,21 @@ const responseApi = {
     status: "ok"
 }
 
-export const getAllLibros = (req, res) => {
-    responseApi.data = listaLibros;
+export const getAllLibros = async  (req, res) => {
+    
+    // const libros = await Libros.findAll();
+
+    responseApi.data = libros;
     responseApi.msg = "Obtener TODOS los libros";
     responseApi.status = "ok";
     res.status(200).send(responseApi);
 }
-export const getLibroById = (req, res) => {
-    responseApi.data = "";
+
+export const getLibroById = async (req, res) => {
+
+    const libros = await Libros.findByPk();
+
+    responseApi.data = libros;
     responseApi.msg = "Obtener 1 libro";
     responseApi.status = "ok";
     res.status(200).send(responseApi);
