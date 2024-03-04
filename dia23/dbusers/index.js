@@ -8,7 +8,7 @@ console.clear()
 // middleWares
 app.use(cors());
 app.use(express.json()); // Leer datos Json de req.body
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:false}));// leer datos de urlEncoded de req.body
 
 //  Importar metofod de Sequelize
 import { Sequelize, DataTypes } from "sequelize";
@@ -29,6 +29,8 @@ const Users = sequelize.define('Usuarios', {
 // Sincronizar mis modelos con mi DB (crear tablas en caso de que no existan)
 // sequelize.sync({ force: true });
 sequelize.sync({ alter: true})
+// force: borra los datos anteriores
+// alter: te vuelve a actualizar 
 
 app.get ("/", (req, res) => {
     res.setHeader("Content-Type", "text/html");
@@ -41,8 +43,8 @@ app.get("/users", async (req, res) => {
 });
 
 app.post("/users", async (req, res) => {
-    const user = await Users.create(req.body)
-    res.json(user)
+    const user = await Users.create(req.body) // cree el usuario con (req.body)
+    res.json(user) // Recibí la respuesta llamando la variable user
 })
 
 app.put("/users/:id", async ( req, res) => {
@@ -59,14 +61,12 @@ app.put("/users/:id", async ( req, res) => {
 
 app.delete("/users/:id", async (req, res) => {
     const user = await Users.findByPk(req.params.id)
-    if (user) {
-        const userViejo=user;
-        await user.destroy(req.body)
-        res.json({msg: "usuario eliminado correctamente"})
-    } else {
-        res.status(404).json({msg:"usuario no encontrado"})
+    if (!user) { res.status(404).json({msg:"usuario no encontrado"}); return; }
+    const userViejo=user;
+    await user.destroy();
+    res.json({msg:"usuario eliminado correctamente"})
     }
-})
+)
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en: ${fullDomain}`)

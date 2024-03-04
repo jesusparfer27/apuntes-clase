@@ -16,21 +16,6 @@ app.use(express.json());
 app.use(logger);
 app.use(express.urlencoded({extended:false}));
 
-//  Importar metofod de Sequelize
-import { Sequelize, DataTypes } from "sequelize";
-
-// Crear una instancia de Sequelize
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './db/datos.sqlite'
-});
-
-//  Definir modelos (tablas)
-const Libros = sequelize.define('Libros', {
-    email: DataTypes.STRING, //DATE, integer, number, boolean
-    password: DataTypes.STRING,
-    edad: DataTypes.INTEGER,
-})
 
 app.use("/API/v1/", indexRouter)
 
