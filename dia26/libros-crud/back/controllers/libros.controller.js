@@ -1,7 +1,7 @@
 // import { misDatos } from "../db/libros.js"
+import { response } from 'express';
 import mysql from 'mysql2/promise'
 // const listaLibros = misDatos.libros;
-
 
 const connection = await mysql.createConnection({
     host: 'localhost',
@@ -22,9 +22,6 @@ export const getAllLibros = async (req, res) => {
 
          );
 
-
-
-
     responseApi.data = results;
     responseApi.msg = "Obtener TODOS los libros";
     responseApi.status = "ok";
@@ -32,22 +29,26 @@ export const getAllLibros = async (req, res) => {
 }
 
 export const getLibroById = async (req, res) => {
+    const id_libro = req.params.id;
 
-    const query =`SELECT libros,* FROM libros
+    const myQuery=`SELECT libros.*, autores.autor FROM libros 
+    JOIN autores ON (libros.id_autor = autores.id)
     WHERE libros.id = ${id_libro}
-    WHERE libros.deleted_at IS NULL`
-
-    // SELECT * FROM posts WHERE id = 2;
-
-    const [results, fields] = await connection.query(query);
-
+    AND libros.deleted_at IS NULL`;
     
+    console.log(myQuery);
+
+
+    const [results, fields] = await connection.query (myQuery);
+
+
     responseApi.data = results;
     responseApi.msg = "Obtener libro por ID";
     responseApi.status = "ok";
     res.status(200).send(responseApi);
 }
-export const updateLibro = (req, res) => {
+
+export const updateLibro = async (req, res) => {
 
     //recibir datos del body
     console.log(req.body)
@@ -71,24 +72,38 @@ export const updateLibro = (req, res) => {
     responseApi.status = "ok";
     res.status(200).send(responseApi);
 }
-export const createLibro = (req, res) => {
 
-    const {titulo, autor, categoria} = req.body
+export const createLibro = async (req, res) => {
+        // ejemplo sequelize
+        // delete req.body.id; // quito el id=0; que envío desde el front
+        // const newBook = await Libros.create(req.body)
 
-    const newId =  Math.random();
-    listaLibros.push({
-        id:newId,
-        titulo,
-        autor,
-        categoria
-    })
+        //  ejemplo MySQL
+    const {titulo, id_autor, cali=0, lanzamiento="", editorial="", precio=0, cant_vendidos=0, num_paginas=0 } = req.body;
 
-    responseApi.data = listaLibros;
-    responseApi.msg = "Creado nuevo libro";
-    responseApi.status = "ok";
-    res.status(200).send(responseApi);
+    if(titulo=="" || id_autor == 0) {
+        responseAPI.msg = "Error al creal libro";
+        responseAPI.status = "error";
+        res.status(400).send(responseAPI);
+        return;
+    }
+
+    const sqlQuery=`INSERT INTO libros
+    (libro, id_autor, calificacion, lanzamiento, editorial, precio, cant_vendidos, num_paginas)
+    VALUES libros
+    ('${titulo}', '${id_autor}', '${cali}', '${lanzamiento}', '${editorial}', '${precio}', '${cant_vendidos}', '${num_paginas}', '${created_at}', '${updated_at}', '${deleted_at}')`
+
+    const [newBook, fields] = await connection.query(sqlQuery); 
+
+    responseAPI.data=newBook;
+    responseAPI.msg="Crear nuevo libro";
+    responseAPI.status="ok";
+    res.status(200).send(responseAPI)
+
+  
 }
-export const deleteLibro = (req, res) => {
+
+export const deleteLibro = async (req, res) => {
 
     const idLibro = req.params.id
     const index = listaLibros.findIndex( libro => libro.id == idLibro )

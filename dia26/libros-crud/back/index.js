@@ -40,6 +40,12 @@ app.get("/", (req, res) => {
 
 })
 
+app.get("*", (req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    const landingHTML = `<h1>Jesus, revisa tu URL, querrás decir API/v1/libros?</h1>`
+    res.send(landingHTML)
+
+})
 
 //Listen del server
 
