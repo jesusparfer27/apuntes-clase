@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import './Login.css'
+import {easyFetch} from 'react'
+
+// Podríamos obtener el HOSTNAME 
 
 function Login() {
 
@@ -10,15 +13,15 @@ function Login() {
 
 
     validateForm = () => {
-        if (email, password ==) { 
-
+        if (data.success) { 
+            navegador
         } else {
             alert('The credentials are incorrect')
         }
     }
 
     handleSubmit = (event) => {
-
+        (e).preventDefault()
     }
 
 

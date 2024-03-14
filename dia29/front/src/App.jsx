@@ -3,16 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Routes, Route, Outlet, Link } from 'react-router-dom'
 import './App.css'
-import NotFound from './components/NotFound'
-import Home from './components/Home'
-import Navigation from './components/Navigation'
-import Agregar from './components/Agregar'
-import ListaLibros from './components/ListaLibros'
-import ListaAutores from './components/ListaAutores'
-import Login from './components/login/Login'
+// import Navigation from './components/Navigation
+
+// Pages (mis componentes principales)
+import NotFound from '@/components/NotFound'
+import Home from '@/pages/Home'
+import Navigation from '@/components/Navigation'
+import Agregar from '@/components/Agregar'
+// usando el alias @ para importar
+import ListaLibros from '@/components/ListaLibros'
+import ListaAutores from '@/components/ListaAutores'
+import Login from '@/pages/login/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Routes>
