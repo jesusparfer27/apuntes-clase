@@ -17,5 +17,9 @@
     "express": "^4.19.2",
     "nodemon": "^3.1.0",
     "sequelize": "^6.37.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5"
   }
 }

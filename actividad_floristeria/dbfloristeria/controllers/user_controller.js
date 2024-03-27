@@ -1,4 +1,4 @@
-import connection from '../db/mysql.db.js'
+//import connection from '../db/mysql.db.js'
 import bcrypt from 'bcrypt'
 
 const responseApi = {
