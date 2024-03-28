@@ -3,6 +3,7 @@ import cors from 'cors'
 import { PORT, fullDomain } from './config/config.js'
 // import mysql from 'mysql2/promise'
 import indexRouter from './routes/index.routes.js'
+import mongoose from "mongoose"
 
 const app = express()
 app.use(express.json())

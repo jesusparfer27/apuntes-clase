@@ -1,0 +1,13 @@
+.burguer_menu {
+    background-color: black;
+}
+
+.material-symbols-outlined {
+    height: 20px;
+    width: 20px;
+    color: black;
+}
+
+.list_burguer_menu {
+    display: none;
+}
